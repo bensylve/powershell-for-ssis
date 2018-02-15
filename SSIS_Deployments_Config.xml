@@ -1,0 +1,24 @@
+<SSISDeployments>
+	<SSISDeployment catalog="SSISDB" server="YOUR-SSIS-SERVER-NAME">
+		<SSISFolder name="YOUR-SSIS-FOLDER-NAME">			
+			<SSISEnvironment name="YOUR-SSIS-DEV-ENVIRONMENT">
+					<SSISEnvironmentVariable name="YOUR-SSIS-ENVIRNOMENT-VARIABLE-ONE" value="Flag to Do Something" sensitive="False" />
+					<SSISEnvironmentVariable name="YOUR-SSIS-ENVIRONMENT-VARIABLE-TWO" value="Path to a Folder" sensitive="False" />
+			</SSISEnvironment>
+			<SSISEnvironment name="YOUR-SSIS-QC-ENVIRONMENT">
+					<SSISEnvironmentVariable name="YOUR-SSIS-ENVIRNOMENT-VARIABLE-ONE" value="Flag to Do Something" sensitive="False" />
+					<SSISEnvironmentVariable name="YOUR-SSIS-ENVIRONMENT-VARIABLE-TWO" value="Path to a Folder" sensitive="False" />
+			</SSISEnvironment>
+			<SSISProject name="YOUR-SSIS-PROJECT-NAME" deploymentFile=".\SOME-FOLDER\YOUR-ISPAC-FILE.ispac">
+				<SSISProjectEnvironmentReference environment="YOUR-SSIS-DEV-ENVIRONMENT">
+					<SSISProjectParameterEnvironmentVariableReference environmentVariable="YOUR-SSIS-ENVIRNOMENT-VARIABLE-ONE" projectParameter="YOUR-SSIS-PROJECT-PARAM-ONE" />
+					<SSISProjectParameterEnvironmentVariableReference environmentVariable="YOUR-SSIS-ENVIRNOMENT-VARIABLE-TWO" projectParameter="YOUR-SSIS-PROJECT-PARAM-TWO" />
+				</SSISProjectEnvironmentReference>
+				<SSISProjectEnvironmentReference environment="YOUR-SSIS-QC-ENVIRONMENT">
+					<SSISProjectParameterEnvironmentVariableReference environmentVariable="YOUR-SSIS-ENVIRNOMENT-VARIABLE-ONE" projectParameter="YOUR-SSIS-PROJECT-PARAM-ONE" />
+					<SSISProjectParameterEnvironmentVariableReference environmentVariable="YOUR-SSIS-ENVIRNOMENT-VARIABLE-TWO" projectParameter="YOUR-SSIS-PROJECT-PARAM-TWO" />
+				</SSISProjectEnvironmentReference>
+			</SSISProject>
+		</SSISFolder>
+	</SSISDeployment>
+</SSISDeployments>
