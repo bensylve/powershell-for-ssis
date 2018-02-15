@@ -17,4 +17,4 @@ This would be used in a workflow such as:
 5. Set the project to reference the environment.
 6. Map the project parameters to the environment variables.
 
-These steps when done manually can be a pain. These scripts help to ease that pain by making the process repeatable.
+These steps when done manually can be a pain. These scripts help to ease that pain by making the process repeatable. If you take a look at the [sample workflow](Sample_SSIS_Deploy_Script.ps1), it takes an [xml configuration file](SSIS_Deployments_Config.xml) and uses the [functions](SSIS_Functions.ps1) to automate the SSIS operations.
